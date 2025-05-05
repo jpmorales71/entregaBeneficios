@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'lectura_cedula_vecino_model.dart';
@@ -121,20 +122,23 @@ class _LecturaCedulaVecinoWidgetState extends State<LecturaCedulaVecinoWidget> {
                 ),
                 child: Stack(
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0x80BFBCBC),
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: FaIcon(
-                          FontAwesomeIcons.qrcode,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 60.0,
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xA4BFBCBC),
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: FaIcon(
+                            FontAwesomeIcons.qrcode,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 60.0,
+                          ),
                         ),
                       ),
                     ),
@@ -188,11 +192,38 @@ class _LecturaCedulaVecinoWidgetState extends State<LecturaCedulaVecinoWidget> {
                     ),
                   ),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      _model.stringQR = await FlutterBarcodeScanner.scanBarcode(
+                        '#C62828', // scanning line color
+                        FFLocalizations.of(context).getText(
+                          'rtichm7k' /* Cancel */,
+                        ), // cancel button text
+                        true, // whether to show the flash icon
+                        ScanMode.QR,
+                      );
+
+                      if (_model.stringQR != '') {
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              content: Text(_model.stringQR),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Ok'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }
+
+                      safeSetState(() {});
                     },
                     text: FFLocalizations.of(context).getText(
-                      'zdbyyng9' /* Scan QR */,
+                      'zdbyyng9' /* QR Rut */,
                     ),
                     icon: Icon(
                       Icons.navigate_next,

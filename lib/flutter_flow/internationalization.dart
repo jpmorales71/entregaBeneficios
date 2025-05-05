@@ -201,7 +201,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'zdbyyng9': {
-      'es': 'Scan QR',
+      'es': 'QR Rut',
+      'en': '',
+    },
+    'rtichm7k': {
+      'es': 'Cancel',
       'en': '',
     },
     'z2i8tg5n': {
@@ -213,10 +217,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'hvty4rmu': {
       'es': 'Guardado exitosamente!',
-      'en': '',
-    },
-    '5v8psikw': {
-      'es': 'Your data has been saved to the database',
       'en': '',
     },
   },

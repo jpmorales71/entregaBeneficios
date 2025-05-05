@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 
 class LecturaCedulaVecinoModel
     extends FlutterFlowModel<LecturaCedulaVecinoWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  var stringQR = '';
+
   @override
   void initState(BuildContext context) {}
 

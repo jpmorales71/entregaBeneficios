@@ -212,6 +212,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                           await showModalBottomSheet(
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
+                            isDismissible: false,
                             enableDrag: false,
                             context: context,
                             builder: (context) {

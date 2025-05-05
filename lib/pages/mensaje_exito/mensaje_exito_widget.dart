@@ -44,7 +44,7 @@ class _MensajeExitoWidgetState extends State<MensajeExitoWidget> {
         padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
         child: Container(
           width: double.infinity,
-          height: 200.0,
+          height: 270.61,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).success,
             borderRadius: BorderRadius.circular(16.0),
@@ -56,6 +56,23 @@ class _MensajeExitoWidgetState extends State<MensajeExitoWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Align(
+                  alignment: AlignmentDirectional(1.0, -1.0),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.close,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 30.0,
+                    ),
+                  ),
+                ),
                 Container(
                   width: 100.0,
                   height: 100.0,
@@ -92,26 +109,6 @@ class _MensajeExitoWidgetState extends State<MensajeExitoWidget> {
                         fontStyle: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .fontStyle,
-                      ),
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    '5v8psikw' /* Your data has been saved to th... */,
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
-                        color: Color(0xE6FFFFFF),
-                        letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                       ),
                 ),
               ].divide(SizedBox(height: 16.0)),
