@@ -222,6 +222,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Miscellaneous
   {
+    '0g1fqtio': {
+      'es': 'Para scan de QR o Barcode, esta APP necesita su permiso',
+      'en': '',
+    },
     'o4fege9r': {
       'es': '',
       'en': '',
