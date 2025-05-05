@@ -456,7 +456,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       FirmaResponsableWidget.routeName);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'l95r4pc1' /* Ingresar */,
+                                  'l95r4pc1' /* Ingresarlo */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
