@@ -215,25 +215,34 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                           ),
                         ),
                       ),
-                      FlutterFlowGoogleMap(
-                        controller: _model.googleMapsController,
-                        onCameraIdle: (latLng) =>
-                            _model.googleMapsCenter = latLng,
-                        initialLocation: _model.googleMapsCenter ??=
-                            _model.placePickerValue.latLng,
-                        markerColor: GoogleMarkerColor.violet,
-                        mapType: MapType.normal,
-                        style: GoogleMapStyle.standard,
-                        initialZoom: 14.0,
-                        allowInteraction: true,
-                        allowZoom: true,
-                        showZoomControls: true,
-                        showLocation: true,
-                        showCompass: false,
-                        showMapToolbar: false,
-                        showTraffic: false,
-                        centerMapOnMarkerTap: true,
-                      ),
+                      Builder(builder: (context) {
+                        final _googleMapMarker = _model.placePickerValue.latLng;
+                        return FlutterFlowGoogleMap(
+                          controller: _model.googleMapsController,
+                          onCameraIdle: (latLng) =>
+                              _model.googleMapsCenter = latLng,
+                          initialLocation: _model.googleMapsCenter ??=
+                              _model.placePickerValue.latLng,
+                          markers: [
+                            FlutterFlowMarker(
+                              _googleMapMarker.serialize(),
+                              _googleMapMarker,
+                            ),
+                          ],
+                          markerColor: GoogleMarkerColor.green,
+                          mapType: MapType.normal,
+                          style: GoogleMapStyle.standard,
+                          initialZoom: 14.0,
+                          allowInteraction: true,
+                          allowZoom: true,
+                          showZoomControls: true,
+                          showLocation: true,
+                          showCompass: false,
+                          showMapToolbar: false,
+                          showTraffic: false,
+                          centerMapOnMarkerTap: true,
+                        );
+                      }),
                     ],
                   ),
                 ),
