@@ -62,7 +62,9 @@ class FFAppState extends ChangeNotifier {
 
   List<MisEntregasDTStruct> _listaMisEntregas = [
     MisEntregasDTStruct.fromSerializableMap(jsonDecode(
-        '{\"rut\":\"11840765\",\"dv\":\"2\",\"pasaporteDni\":\"\",\"nombres\":\"Juan Pablo\",\"paterno\":\"Morales\",\"materno\":\"Abarca\",\"domicilio\":\"La Concepcion 7663\",\"unidadVecinal\":\"1\",\"block\":\"\",\"departamento\":\"\",\"telefono\":\"956593755\",\"firmaResponsable\":\"\",\"firmaVecino\":\"\",\"fechaHora\":\"1746568059716\"}'))
+        '{\"rut\":\"11840765\",\"dv\":\"2\",\"pasaporteDni\":\"\",\"nombres\":\"Juan Pablo\",\"paterno\":\"Morales\",\"materno\":\"Abarca\",\"domicilio\":\"La Concepcion 7663\",\"unidadVecinal\":\"1\",\"block\":\"\",\"departamento\":\"\",\"telefono\":\"956593755\",\"firmaResponsable\":\"\",\"firmaVecino\":\"\",\"fechaHora\":\"1746568059716\"}')),
+    MisEntregasDTStruct.fromSerializableMap(jsonDecode(
+        '{\"rut\":\"5204731\",\"dv\":\"5\",\"pasaporteDni\":\"Hello World\",\"nombres\":\"Williams\",\"paterno\":\"Wallace\",\"materno\":\"Morales\",\"domicilio\":\"Av. Vicuna Mackenna 6720\",\"unidadVecinal\":\"Hello World\",\"block\":\"Hello World\",\"departamento\":\"Hello World\",\"telefono\":\"0\",\"firmaResponsable\":\"Hello World\",\"firmaVecino\":\"Hello World\",\"fechaHora\":\"1746572716653\"}'))
   ];
   List<MisEntregasDTStruct> get listaMisEntregas => _listaMisEntregas;
   set listaMisEntregas(List<MisEntregasDTStruct> value) {
