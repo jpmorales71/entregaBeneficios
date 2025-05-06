@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/mensaje_exito/mensaje_exito_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -234,9 +233,6 @@ class _FirmaVecinoWidgetState extends State<FirmaVecinoWidget> {
 
                           FFAppState().firmaVecino = FFAppState().firmaBase64;
                           safeSetState(() {});
-
-                          context
-                              .pushNamed(LecturaCedulaVecinoWidget.routeName);
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(

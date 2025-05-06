@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/mensaje_direccion/mensaje_direccion_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -133,6 +134,8 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                         'AIzaSyADNBzaDIQzMqO0LKwdtyFmQOezLRuq2sA',
                     onSelect: (place) async {
                       safeSetState(() => _model.placePickerValue = place);
+                      (await _model.googleMapsController.future).animateCamera(
+                          CameraUpdate.newLatLng(place.latLng.toGoogleMaps()));
                     },
                     defaultText: FFLocalizations.of(context).getText(
                       'gjimq0ht' /* Selecciona la dirección */,
@@ -217,7 +220,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                         onCameraIdle: (latLng) =>
                             _model.googleMapsCenter = latLng,
                         initialLocation: _model.googleMapsCenter ??=
-                            LatLng(-33.55, -70.5667),
+                            _model.placePickerValue.latLng,
                         markerColor: GoogleMarkerColor.violet,
                         mapType: MapType.normal,
                         style: GoogleMapStyle.standard,
@@ -346,8 +349,50 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                               },
                             ).then((value) => safeSetState(() {}));
 
-                            context
-                                .pushNamed(LecturaCedulaVecinoWidget.routeName);
+                            _model.direccion = functions.extraerTextoDireccion(
+                                _model.placePickerValue.address);
+                            _model.numero = functions.extraerNumeroDireccion(
+                                _model.placePickerValue.address);
+                            _model.latitud = functions
+                                .latitudFromCoordenadas(valueOrDefault<String>(
+                              _model.placePickerValue.address,
+                              'latitud',
+                            ));
+                            _model.longitud = functions
+                                .longitudFromCoordenadas(valueOrDefault<String>(
+                              _model.placePickerValue.address,
+                              'longitud',
+                            ));
+                            safeSetState(() {});
+
+                            context.pushNamed(
+                              LecturaCedulaVecinoWidget.routeName,
+                              queryParameters: {
+                                'direccionBenef': serializeParam(
+                                  _model.direccion,
+                                  ParamType.String,
+                                ),
+                                'numeroBenef': serializeParam(
+                                  _model.numero,
+                                  ParamType.int,
+                                ),
+                                'latitudBenef': serializeParam(
+                                  _model.latitud,
+                                  ParamType.String,
+                                ),
+                                'longitudBenef': serializeParam(
+                                  _model.longitud,
+                                  ParamType.String,
+                                ),
+                                'fechaHora': serializeParam(
+                                  valueOrDefault<String>(
+                                    getCurrentTimestamp.toString(),
+                                    'fecha de registro',
+                                  ),
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
                           },
                           text: FFLocalizations.of(context).getText(
                             'uprj9okx' /* Confirmar dirección */,

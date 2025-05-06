@@ -10,7 +10,20 @@ import 'lectura_cedula_vecino_model.dart';
 export 'lectura_cedula_vecino_model.dart';
 
 class LecturaCedulaVecinoWidget extends StatefulWidget {
-  const LecturaCedulaVecinoWidget({super.key});
+  const LecturaCedulaVecinoWidget({
+    super.key,
+    required this.direccionBenef,
+    required this.numeroBenef,
+    required this.latitudBenef,
+    required this.longitudBenef,
+    required this.fechaHora,
+  });
+
+  final String? direccionBenef;
+  final int? numeroBenef;
+  final String? latitudBenef;
+  final String? longitudBenef;
+  final String? fechaHora;
 
   static String routeName = 'lecturaCedulaVecino';
   static String routePath = '/lecturaCedulaVecino';
@@ -101,8 +114,62 @@ class _LecturaCedulaVecinoWidgetState extends State<LecturaCedulaVecinoWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Container(
+                decoration: BoxDecoration(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      '${widget.direccionBenef} ${valueOrDefault<String>(
+                        widget.numeroBenef?.toString(),
+                        'Direccion',
+                      )}',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                    ),
+                    Text(
+                      valueOrDefault<String>(
+                        widget.fechaHora,
+                        'Fecha Hora',
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
               Container(
                 width: 300.0,
                 height: 300.0,

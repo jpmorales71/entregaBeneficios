@@ -189,7 +189,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Firma Responsable municipalidad',
       'en': '',
     },
-    'yz5mq40g': {
+    'xzh1056o': {
       'es': 'Home',
       'en': '',
     },

@@ -101,7 +101,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: LecturaCedulaVecinoWidget.routeName,
           path: LecturaCedulaVecinoWidget.routePath,
-          builder: (context, params) => LecturaCedulaVecinoWidget(),
+          builder: (context, params) => LecturaCedulaVecinoWidget(
+            direccionBenef: params.getParam(
+              'direccionBenef',
+              ParamType.String,
+            ),
+            numeroBenef: params.getParam(
+              'numeroBenef',
+              ParamType.int,
+            ),
+            latitudBenef: params.getParam(
+              'latitudBenef',
+              ParamType.String,
+            ),
+            longitudBenef: params.getParam(
+              'longitudBenef',
+              ParamType.String,
+            ),
+            fechaHora: params.getParam(
+              'fechaHora',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: FirmaVecinoWidget.routeName,

@@ -5,6 +5,16 @@ import 'direccion_vecino_widget.dart' show DireccionVecinoWidget;
 import 'package:flutter/material.dart';
 
 class DireccionVecinoModel extends FlutterFlowModel<DireccionVecinoWidget> {
+  ///  Local state fields for this page.
+
+  String? direccion;
+
+  int? numero;
+
+  String? latitud;
+
+  String? longitud;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for PlacePicker widget.
