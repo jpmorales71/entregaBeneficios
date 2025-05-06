@@ -217,7 +217,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                         onCameraIdle: (latLng) =>
                             _model.googleMapsCenter = latLng,
                         initialLocation: _model.googleMapsCenter ??=
-                            LatLng(13.106061, -59.613158),
+                            LatLng(-33.55, -70.5667),
                         markerColor: GoogleMarkerColor.violet,
                         mapType: MapType.normal,
                         style: GoogleMapStyle.standard,
