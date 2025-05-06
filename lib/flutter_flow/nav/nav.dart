@@ -102,6 +102,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: LecturaCedulaVecinoWidget.routeName,
           path: LecturaCedulaVecinoWidget.routePath,
           builder: (context, params) => LecturaCedulaVecinoWidget(),
+        ),
+        FFRoute(
+          name: FirmaVecinoWidget.routeName,
+          path: FirmaVecinoWidget.routePath,
+          builder: (context, params) => FirmaVecinoWidget(),
+        ),
+        FFRoute(
+          name: DireccionVecinoWidget.routeName,
+          path: DireccionVecinoWidget.routePath,
+          builder: (context, params) => DireccionVecinoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

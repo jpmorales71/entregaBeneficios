@@ -213,10 +213,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // firmaVecino
+  {
+    '1adr8nob': {
+      'es': 'Limpiar firma',
+      'en': '',
+    },
+    'fvg7f56r': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'dud6p0c5': {
+      'es': 'Firma Vecino (Recibe conforme)',
+      'en': '',
+    },
+    '8da4429x': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // direccionVecino
+  {
+    'gjimq0ht': {
+      'es': 'Selecciona la dirección',
+      'en': '',
+    },
+    '83o7ieau': {
+      'es': 'Dirección seleccionada',
+      'en': '',
+    },
+    'uprj9okx': {
+      'es': 'Confirmar dirección',
+      'en': '',
+    },
+    'sfl6dowu': {
+      'es': 'Dirección Entrega Beneficio',
+      'en': '',
+    },
+  },
   // mensajeExito
   {
     'hvty4rmu': {
       'es': 'Guardado exitosamente!',
+      'en': '',
+    },
+  },
+  // mensajeDireccion
+  {
+    'hbj7lmxd': {
+      'es': 'Dirección Seleccionada!',
       'en': '',
     },
   },

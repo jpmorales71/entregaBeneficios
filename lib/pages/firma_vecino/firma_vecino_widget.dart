@@ -8,28 +8,28 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'firma_responsable_model.dart';
-export 'firma_responsable_model.dart';
+import 'firma_vecino_model.dart';
+export 'firma_vecino_model.dart';
 
-class FirmaResponsableWidget extends StatefulWidget {
-  const FirmaResponsableWidget({super.key});
+class FirmaVecinoWidget extends StatefulWidget {
+  const FirmaVecinoWidget({super.key});
 
-  static String routeName = 'firmaResponsable';
-  static String routePath = '/firmaResponsable';
+  static String routeName = 'firmaVecino';
+  static String routePath = '/firmaVecino';
 
   @override
-  State<FirmaResponsableWidget> createState() => _FirmaResponsableWidgetState();
+  State<FirmaVecinoWidget> createState() => _FirmaVecinoWidgetState();
 }
 
-class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
-  late FirmaResponsableModel _model;
+class _FirmaVecinoWidgetState extends State<FirmaVecinoWidget> {
+  late FirmaVecinoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FirmaResponsableModel());
+    _model = createModel(context, () => FirmaVecinoModel());
   }
 
   @override
@@ -52,7 +52,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xFF03A801),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -70,7 +70,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              '25cx9o32' /* Firma Responsable municipalida... */,
+              'dud6p0c5' /* Firma Vecino (Recibe conforme) */,
             ),
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -95,7 +95,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                 child: Icon(
-                  Icons.real_estate_agent,
+                  Icons.emoji_people_sharp,
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   size: 30.0,
                 ),
@@ -146,7 +146,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                           safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
-                          '8o4946v1' /* Limpiar firma */,
+                          '1adr8nob' /* Limpiar firma */,
                         ),
                         options: FFButtonOptions(
                           width: 140.0,
@@ -193,9 +193,8 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text(
-                                      'Guardando firma responsable municipal'),
-                                  content: Text('Guarda firma responsable?'),
+                                  title: Text('Guardando firma recepción'),
+                                  content: Text('Guarda firma de Recepción?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
@@ -213,9 +212,6 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                             ) ??
                             false;
                         if (confirmDialogResponse) {
-                          FFAppState().firmaResponsable =
-                              FFAppState().firmaBase64;
-                          safeSetState(() {});
                           await showModalBottomSheet(
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
@@ -236,7 +232,11 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                             },
                           ).then((value) => safeSetState(() {}));
 
-                          context.pushNamed(DireccionVecinoWidget.routeName);
+                          FFAppState().firmaVecino = FFAppState().firmaBase64;
+                          safeSetState(() {});
+
+                          context
+                              .pushNamed(LecturaCedulaVecinoWidget.routeName);
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -257,7 +257,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                         }
                       },
                       text: FFLocalizations.of(context).getText(
-                        'e36d8kvq' /* Guardar */,
+                        'fvg7f56r' /* Guardar */,
                       ),
                       icon: Icon(
                         Icons.navigate_next,
@@ -271,7 +271,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                         iconAlignment: IconAlignment.end,
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xFF03A801),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   font: GoogleFonts.interTight(

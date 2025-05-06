@@ -49,7 +49,7 @@ class _LecturaCedulaVecinoWidgetState extends State<LecturaCedulaVecinoWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xFF03A801),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -150,8 +150,8 @@ class _LecturaCedulaVecinoWidgetState extends State<LecturaCedulaVecinoWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      Navigator.pop(context);
                     },
                     text: FFLocalizations.of(context).getText(
                       'djjmn3y8' /* Cancel */,
@@ -237,7 +237,7 @@ class _LecturaCedulaVecinoWidgetState extends State<LecturaCedulaVecinoWidget> {
                       iconAlignment: IconAlignment.end,
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF03A801),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.interTight(

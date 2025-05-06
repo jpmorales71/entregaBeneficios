@@ -25,4 +25,16 @@ class FFAppState extends ChangeNotifier {
   set firmaBase64(String value) {
     _firmaBase64 = value;
   }
+
+  String _firmaResponsable = '';
+  String get firmaResponsable => _firmaResponsable;
+  set firmaResponsable(String value) {
+    _firmaResponsable = value;
+  }
+
+  String _firmaVecino = '';
+  String get firmaVecino => _firmaVecino;
+  set firmaVecino(String value) {
+    _firmaVecino = value;
+  }
 }
