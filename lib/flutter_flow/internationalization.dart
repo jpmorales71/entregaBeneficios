@@ -251,6 +251,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // misEntregas
+  {
+    'kjk52ie6': {
+      'es': 'Buscar en Mis Entregas Realizadas...',
+      'en': '',
+    },
+    '7z8t5y4s': {
+      'es': 'Mis entregas',
+      'en': '',
+    },
+  },
   // mensajeExito
   {
     'hvty4rmu': {

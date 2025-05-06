@@ -8,6 +8,7 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/custom_auth/custom_auth_user_provider.dart';
 
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -79,14 +80,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? FirmaResponsableWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? FirmaResponsableWidget()
-              : LoginWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
         ),
         FFRoute(
           name: LoginWidget.routeName,
@@ -132,7 +132,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: DireccionVecinoWidget.routeName,
           path: DireccionVecinoWidget.routePath,
-          builder: (context, params) => DireccionVecinoWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'direccionVecino')
+              : DireccionVecinoWidget(),
+        ),
+        FFRoute(
+          name: MisEntregasWidget.routeName,
+          path: MisEntregasWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'misEntregas')
+              : MisEntregasWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

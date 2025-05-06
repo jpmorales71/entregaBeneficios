@@ -7,3 +7,4 @@ export '/pages/lectura_cedula_vecino/lectura_cedula_vecino_widget.dart'
 export '/pages/firma_vecino/firma_vecino_widget.dart' show FirmaVecinoWidget;
 export '/pages/direccion_vecino/direccion_vecino_widget.dart'
     show DireccionVecinoWidget;
+export '/pages/mis_entregas/mis_entregas_widget.dart' show MisEntregasWidget;
