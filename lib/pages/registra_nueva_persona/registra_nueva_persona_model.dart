@@ -1,17 +1,26 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'lectura_cedula_vecino_widget.dart' show LecturaCedulaVecinoWidget;
+import 'registra_nueva_persona_widget.dart' show RegistraNuevaPersonaWidget;
 import 'package:flutter/material.dart';
 
-class LecturaCedulaVecinoModel
-    extends FlutterFlowModel<LecturaCedulaVecinoWidget> {
-  ///  State fields for stateful widgets in this page.
+class RegistraNuevaPersonaModel
+    extends FlutterFlowModel<RegistraNuevaPersonaWidget> {
+  ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  var stringQR = '';
   // State field(s) for rut widget.
   FocusNode? rutFocusNode;
   TextEditingController? rutTextController;
   String? Function(BuildContext, String?)? rutTextControllerValidator;
+  String? _rutTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '75u2qfgf' /* RUT is required */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for pasaporte widget.
   FocusNode? pasaporteFocusNode;
   TextEditingController? pasaporteTextController;
@@ -20,14 +29,44 @@ class LecturaCedulaVecinoModel
   FocusNode? nombresFocusNode;
   TextEditingController? nombresTextController;
   String? Function(BuildContext, String?)? nombresTextControllerValidator;
+  String? _nombresTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'f7f86rqd' /* Nombres is required */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for paterno widget.
   FocusNode? paternoFocusNode;
   TextEditingController? paternoTextController;
   String? Function(BuildContext, String?)? paternoTextControllerValidator;
+  String? _paternoTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '2sbwjvgh' /* Paterno is required */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for materno widget.
   FocusNode? maternoFocusNode;
   TextEditingController? maternoTextController;
   String? Function(BuildContext, String?)? maternoTextControllerValidator;
+  String? _maternoTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        't15m41dj' /* Materno is required */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for domicilio widget.
   FocusNode? domicilioFocusNode;
   TextEditingController? domicilioTextController;
@@ -40,6 +79,16 @@ class LecturaCedulaVecinoModel
   FocusNode? telefonoFocusNode;
   TextEditingController? telefonoTextController;
   String? Function(BuildContext, String?)? telefonoTextControllerValidator;
+  String? _telefonoTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'syw4tcj7' /* Telefono is requerido */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
@@ -47,7 +96,7 @@ class LecturaCedulaVecinoModel
   String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '81mds6t6' /* Email is required */,
+        'tojslnf0' /* Email is required */,
       );
     }
 
@@ -59,6 +108,11 @@ class LecturaCedulaVecinoModel
 
   @override
   void initState(BuildContext context) {
+    rutTextControllerValidator = _rutTextControllerValidator;
+    nombresTextControllerValidator = _nombresTextControllerValidator;
+    paternoTextControllerValidator = _paternoTextControllerValidator;
+    maternoTextControllerValidator = _maternoTextControllerValidator;
+    telefonoTextControllerValidator = _telefonoTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;
   }
 

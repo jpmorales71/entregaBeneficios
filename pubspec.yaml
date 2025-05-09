@@ -76,6 +76,7 @@ dependencies:
   path_provider_linux: 2.2.1
   path_provider_platform_interface: 2.1.2
   path_provider_windows: 2.3.0
+  photo_view: 0.15.0
   postgrest: 2.1.4
   provider: 6.1.2
   realtime_client: 2.2.1
@@ -95,7 +96,6 @@ dependencies:
   storage_client: 2.0.3
   supabase: 2.3.0
   supabase_flutter: 2.6.0
-  text_search: 1.0.1
   timeago: 3.6.1
   url_launcher: 6.3.0
   url_launcher_android: 6.3.10
@@ -149,6 +149,7 @@ flutter:
     - assets/pdfs/
     - assets/jsons/
 
+    - assets/sqlite_db_files/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

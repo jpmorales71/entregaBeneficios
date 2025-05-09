@@ -74,7 +74,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
         resizeToAvoidBottomInset: false,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xFF03A801),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -82,7 +82,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
-              Icons.arrow_back_rounded,
+              Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
             ),
@@ -101,7 +101,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                         FlutterFlowTheme.of(context).titleMedium.fontStyle,
                   ),
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 18.0,
+                  fontSize: 16.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
                   fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
@@ -169,7 +169,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                     buttonOptions: FFButtonOptions(
                       width: 200.0,
                       height: 40.0,
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: FlutterFlowTheme.of(context).secondaryText,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.interTight(
@@ -236,34 +236,38 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                           ),
                         ),
                       ),
-                      Builder(builder: (context) {
-                        final _googleMapMarker = _model.placePickerValue.latLng;
-                        return FlutterFlowGoogleMap(
-                          controller: _model.googleMapsController,
-                          onCameraIdle: (latLng) =>
-                              _model.googleMapsCenter = latLng,
-                          initialLocation: _model.googleMapsCenter ??=
-                              currentUserLocationValue!,
-                          markers: [
-                            FlutterFlowMarker(
-                              _googleMapMarker.serialize(),
-                              _googleMapMarker,
-                            ),
-                          ],
-                          markerColor: GoogleMarkerColor.green,
-                          mapType: MapType.normal,
-                          style: GoogleMapStyle.standard,
-                          initialZoom: 14.0,
-                          allowInteraction: true,
-                          allowZoom: true,
-                          showZoomControls: true,
-                          showLocation: true,
-                          showCompass: false,
-                          showMapToolbar: false,
-                          showTraffic: false,
-                          centerMapOnMarkerTap: true,
-                        );
-                      }),
+                      Container(
+                        decoration: BoxDecoration(),
+                        child: Builder(builder: (context) {
+                          final _googleMapMarker =
+                              _model.placePickerValue.latLng;
+                          return FlutterFlowGoogleMap(
+                            controller: _model.googleMapsController,
+                            onCameraIdle: (latLng) =>
+                                _model.googleMapsCenter = latLng,
+                            initialLocation: _model.googleMapsCenter ??=
+                                currentUserLocationValue!,
+                            markers: [
+                              FlutterFlowMarker(
+                                _googleMapMarker.serialize(),
+                                _googleMapMarker,
+                              ),
+                            ],
+                            markerColor: GoogleMarkerColor.green,
+                            mapType: MapType.normal,
+                            style: GoogleMapStyle.standard,
+                            initialZoom: 14.0,
+                            allowInteraction: true,
+                            allowZoom: true,
+                            showZoomControls: true,
+                            showLocation: true,
+                            showCompass: false,
+                            showMapToolbar: false,
+                            showTraffic: false,
+                            centerMapOnMarkerTap: true,
+                          );
+                        }),
+                      ),
                     ],
                   ),
                 ),
@@ -415,9 +419,11 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                                   ParamType.String,
                                 ),
                                 'fechaHora': serializeParam(
-                                  valueOrDefault<String>(
-                                    getCurrentTimestamp.toString(),
-                                    'fecha de registro',
+                                  dateTimeFormat(
+                                    "d/M/y",
+                                    getCurrentTimestamp,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
                                   ),
                                   ParamType.String,
                                 ),
@@ -433,7 +439,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                             padding: EdgeInsets.all(8.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: FlutterFlowTheme.of(context).secondaryText,
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -445,6 +451,7 @@ class _DireccionVecinoWidgetState extends State<DireccionVecinoWidget> {
                                   ),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
+                                  fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)

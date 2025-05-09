@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,8 +33,8 @@ class _LoginWidgetState extends State<LoginWidget>
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.emailAddressTextController ??= TextEditingController();
-    _model.emailAddressFocusNode ??= FocusNode();
+    _model.usuarioTextController ??= TextEditingController();
+    _model.usuarioFocusNode ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
@@ -175,7 +176,7 @@ class _LoginWidgetState extends State<LoginWidget>
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                '0yvl2bel' /* Entregas */,
+                                '0yvl2bel' /* Login */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -233,16 +234,17 @@ class _LoginWidgetState extends State<LoginWidget>
                               child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
-                                  controller: _model.emailAddressTextController,
-                                  focusNode: _model.emailAddressFocusNode,
+                                  controller: _model.usuarioTextController,
+                                  focusNode: _model.usuarioFocusNode,
+                                  onChanged: (_) => EasyDebounce.debounce(
+                                    '_model.usuarioTextController',
+                                    Duration(milliseconds: 2000),
+                                    () => safeSetState(() {}),
+                                  ),
                                   autofocus: true,
                                   autofillHints: [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      'kp88xl67' /* Email */,
-                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -256,6 +258,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -266,6 +269,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   .labelLarge
                                                   .fontStyle,
                                         ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'h1nvu7al' /* Usuario */,
+                                    ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
@@ -301,6 +308,21 @@ class _LoginWidgetState extends State<LoginWidget>
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .primaryBackground,
+                                    suffixIcon: _model.usuarioTextController!
+                                            .text.isNotEmpty
+                                        ? InkWell(
+                                            onTap: () async {
+                                              _model.usuarioTextController
+                                                  ?.clear();
+                                              safeSetState(() {});
+                                            },
+                                            child: Icon(
+                                              Icons.clear,
+                                              color: Color(0xFF757575),
+                                              size: 22.0,
+                                            ),
+                                          )
+                                        : null,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -325,7 +347,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       ),
                                   keyboardType: TextInputType.emailAddress,
                                   validator: _model
-                                      .emailAddressTextControllerValidator
+                                      .usuarioTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -359,6 +381,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -453,10 +476,17 @@ class _LoginWidgetState extends State<LoginWidget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed(
-                                      FirmaResponsableWidget.routeName);
+                                    HomePageWidget.routeName,
+                                    queryParameters: {
+                                      'isLogin': serializeParam(
+                                        _model.isLogin,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                  );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'l95r4pc1' /* Ingresarlo */,
+                                  'l95r4pc1' /* Ingresar */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,

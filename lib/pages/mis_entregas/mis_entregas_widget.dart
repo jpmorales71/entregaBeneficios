@@ -4,7 +4,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:text_search/text_search.dart';
 import 'mis_entregas_model.dart';
 export 'mis_entregas_model.dart';
 
@@ -68,25 +67,8 @@ class _MisEntregasWidgetState extends State<MisEntregasWidget> {
                         focusNode: _model.textFieldFocusNode,
                         onChanged: (_) => EasyDebounce.debounce(
                           '_model.textController',
-                          Duration(milliseconds: 2000),
-                          () async {
-                            safeSetState(() {
-                              _model
-                                  .simpleSearchResults = TextSearch(FFAppState()
-                                      .listaMisEntregas
-                                      .where((e) => e.hasDomicilio())
-                                      .toList()
-                                      .map((e) => e.domicilio)
-                                      .toList()
-                                      .map((str) =>
-                                          TextSearchItem.fromTerms(str, [str]))
-                                      .toList())
-                                  .search(_model.textController.text)
-                                  .map((r) => r.object)
-                                  .toList();
-                              ;
-                            });
-                          },
+                          Duration(milliseconds: 300),
+                          () => safeSetState(() {}),
                         ),
                         autofocus: true,
                         obscureText: false,
@@ -155,24 +137,6 @@ class _MisEntregasWidgetState extends State<MisEntregasWidget> {
                               ? InkWell(
                                   onTap: () async {
                                     _model.textController?.clear();
-                                    safeSetState(() {
-                                      _model.simpleSearchResults = TextSearch(
-                                              FFAppState()
-                                                  .listaMisEntregas
-                                                  .where(
-                                                      (e) => e.hasDomicilio())
-                                                  .toList()
-                                                  .map((e) => e.domicilio)
-                                                  .toList()
-                                                  .map((str) =>
-                                                      TextSearchItem.fromTerms(
-                                                          str, [str]))
-                                                  .toList())
-                                          .search(_model.textController.text)
-                                          .map((r) => r.object)
-                                          .toList();
-                                      ;
-                                    });
                                     safeSetState(() {});
                                   },
                                   child: Icon(

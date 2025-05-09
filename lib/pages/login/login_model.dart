@@ -4,12 +4,16 @@ import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
+  ///  Local state fields for this page.
+
+  bool isLogin = false;
+
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressTextController;
-  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for usuario widget.
+  FocusNode? usuarioFocusNode;
+  TextEditingController? usuarioTextController;
+  String? Function(BuildContext, String?)? usuarioTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -23,8 +27,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   @override
   void dispose() {
-    emailAddressFocusNode?.dispose();
-    emailAddressTextController?.dispose();
+    usuarioFocusNode?.dispose();
+    usuarioTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

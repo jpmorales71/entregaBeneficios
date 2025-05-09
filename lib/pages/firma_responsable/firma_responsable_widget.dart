@@ -4,8 +4,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/mensaje_exito/mensaje_exito_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
-import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'firma_responsable_model.dart';
@@ -60,7 +60,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
-              Icons.arrow_back_rounded,
+              Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
             ),
@@ -70,7 +70,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              '25cx9o32' /* Firma Responsable municipalida... */,
+              '25cx9o32' /* Firma Responsable */,
             ),
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -94,8 +94,8 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
               alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
-                child: Icon(
-                  Icons.real_estate_agent,
+                child: FaIcon(
+                  FontAwesomeIcons.signature,
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   size: 30.0,
                 ),
@@ -193,19 +193,18 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text(
-                                      'Guardando firma responsable municipal'),
+                                  title: Text('Registro de firma'),
                                   content: Text('Guarda firma responsable?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, false),
-                                      child: Text('Cancel'),
+                                      child: Text('Cancelar'),
                                     ),
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, true),
-                                      child: Text('Confirm'),
+                                      child: Text('Confirmar'),
                                     ),
                                   ],
                                 );
@@ -221,6 +220,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                             backgroundColor: Colors.transparent,
                             isDismissible: false,
                             enableDrag: false,
+                            useSafeArea: true,
                             context: context,
                             builder: (context) {
                               return GestureDetector(
@@ -236,7 +236,7 @@ class _FirmaResponsableWidgetState extends State<FirmaResponsableWidget> {
                             },
                           ).then((value) => safeSetState(() {}));
 
-                          context.pushNamed(DireccionVecinoWidget.routeName);
+                          context.safePop();
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(

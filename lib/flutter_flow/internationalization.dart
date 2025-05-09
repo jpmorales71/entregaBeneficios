@@ -151,15 +151,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '0yvl2bel': {
-      'es': 'Entregas',
+      'es': 'Login',
       'en': '',
     },
     'ox3g73en': {
-      'es': 'Ingrese los siguientes datos para ingresar a nuestra app.',
+      'es':
+          'Ingrese los siguientes datos para ingresar a nuestra app de Beneficios.',
       'en': '',
     },
     'kp88xl67': {
-      'es': 'Email',
+      'es': '',
+      'en': '',
+    },
+    'h1nvu7al': {
+      'es': 'Usuario',
       'en': '',
     },
     'w3i51p0l': {
@@ -167,7 +172,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'l95r4pc1': {
-      'es': 'Ingresarlo',
+      'es': 'Ingresar',
       'en': '',
     },
     'ej9wg18r': {
@@ -186,7 +191,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '25cx9o32': {
-      'es': 'Firma Responsable municipalidad',
+      'es': 'Firma Responsable',
       'en': '',
     },
     'xzh1056o': {
@@ -206,6 +211,118 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rtichm7k': {
       'es': 'Cancel',
+      'en': '',
+    },
+    'ibvmrjcy': {
+      'es': 'Beneficiario',
+      'en': '',
+    },
+    'gpd2jzsf': {
+      'es': 'RUT',
+      'en': '',
+    },
+    'nl1jsqzk': {
+      'es': 'Pasaporte/DNI',
+      'en': '',
+    },
+    'fff1689t': {
+      'es': 'Nombres',
+      'en': '',
+    },
+    'n3sm4lth': {
+      'es': 'Paterno',
+      'en': '',
+    },
+    '114izwqx': {
+      'es': 'Materno',
+      'en': '',
+    },
+    'qxf2oym6': {
+      'es': 'Domicilio',
+      'en': '',
+    },
+    'zqmg7st3': {
+      'es': 'U.V',
+      'en': '',
+    },
+    'r21lm562': {
+      'es': 'Telefono',
+      'en': '',
+    },
+    'y5y3mgob': {
+      'es': 'Email',
+      'en': '',
+    },
+    '21d1ch8w': {
+      'es': 'RUT is required',
+      'en': '',
+    },
+    'ly3thi3z': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'ufsehae0': {
+      'es': 'Pasaporte/DNI is required',
+      'en': '',
+    },
+    'zf45cl3m': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '9n82l4gm': {
+      'es': 'Nombres is required',
+      'en': '',
+    },
+    'j14vqcrc': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'uzz2pqk7': {
+      'es': 'Paterno is required',
+      'en': '',
+    },
+    '6m365f3o': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '0pe2of0i': {
+      'es': 'Materno is required',
+      'en': '',
+    },
+    '6vd9azxz': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'qctnpe00': {
+      'es': 'Domicilio is required',
+      'en': '',
+    },
+    'wnh5a0tf': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'ngxk4clq': {
+      'es': 'U.V is required',
+      'en': '',
+    },
+    '4h3mt9co': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'cv6yxwcy': {
+      'es': 'Telefono is required',
+      'en': '',
+    },
+    'brmgxxij': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '81mds6t6': {
+      'es': 'Email is required',
+      'en': '',
+    },
+    'zjmj13l6': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
     'z2i8tg5n': {
@@ -262,6 +379,174 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // miResumen
+  {
+    '01u80s8x': {
+      'es': 'Panel de Control',
+      'en': '',
+    },
+    'pww6wpqa': {
+      'es': 'Resumen Diario',
+      'en': '',
+    },
+    'gtqszr71': {
+      'es': '157',
+      'en': '',
+    },
+    'dk55nwkd': {
+      'es': 'Total Recibidos',
+      'en': '',
+    },
+    'cc6bgedl': {
+      'es': '57',
+      'en': '',
+    },
+    'fptmcjv2': {
+      'es': 'Entregados',
+      'en': '',
+    },
+    'dciar8z9': {
+      'es': '100',
+      'en': '',
+    },
+    '4cv1vip0': {
+      'es': 'Pendientes',
+      'en': '',
+    },
+    'gy4xjroy': {
+      'es': '100',
+      'en': '',
+    },
+    '0kn88fdl': {
+      'es': 'Devueltos',
+      'en': '',
+    },
+    'o57q407g': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // HomePage
+  {
+    '5kq142np': {
+      'es': 'Entrega de Beneficios',
+      'en': '',
+    },
+    'bklh5drl': {
+      'es': '©Desarrollado por DTI 2025, todos los derechos reservados.',
+      'en': '',
+    },
+    '860kkxf3': {
+      'es': 'Módulo Líder',
+      'en': '',
+    },
+    'u034nl9l': {
+      'es': 'Recepción de vales',
+      'en': '',
+    },
+    '287k7ysd': {
+      'es': '(Entrega de DIDECO a LIDER)',
+      'en': '',
+    },
+    'a5q6g5y0': {
+      'es': 'Distribución de vales',
+      'en': '',
+    },
+    'uje1ydx1': {
+      'es': '(Entrega de vales a Equipo)',
+      'en': '',
+    },
+    'vf873r47': {
+      'es': 'Rendición de vales',
+      'en': '',
+    },
+    '6mgs60qt': {
+      'es': '(Cuadratura al final del día)',
+      'en': '',
+    },
+    '7p4k76ki': {
+      'es': 'Entregas',
+      'en': '',
+    },
+    '4wtv5uz5': {
+      'es': 'Registro de Firma Responsable',
+      'en': '',
+    },
+    'ceus9yhu': {
+      'es': '(Firma de quien entrega los vales en terreno)',
+      'en': '',
+    },
+    'kzkjqglv': {
+      'es': 'Registro de Domicilio',
+      'en': '',
+    },
+    'jdergl1u': {
+      'es': '(Domicilio del beneficiario)',
+      'en': '',
+    },
+    'b7plpzk2': {
+      'es': 'Registro de Beneficiario',
+      'en': '',
+    },
+    '3u8ax1ub': {
+      'es': '(Lectura QR y/o ingreso datos personales)',
+      'en': '',
+    },
+    'pi6wetal': {
+      'es': 'Lectura QR vale',
+      'en': '',
+    },
+    'q74q22c3': {
+      'es': '(Lectura QR y/o ingreso datos personales)',
+      'en': '',
+    },
+    'iwy9epm5': {
+      'es': 'Entrega',
+      'en': '',
+    },
+    'w8p3bpbe': {
+      'es': '(Lectura QR y/o ingreso datos personales)',
+      'en': '',
+    },
+    'yujjnsic': {
+      'es': 'Menú',
+      'en': '',
+    },
+  },
+  // lecturaQRVale
+  {
+    'ypfamdq6': {
+      'es': 'Cancel',
+      'en': '',
+    },
+    '0p7jdyh1': {
+      'es': 'QR Vale',
+      'en': '',
+    },
+    'loue1ayg': {
+      'es': 'Cancel',
+      'en': '',
+    },
+    'lfijxrze': {
+      'es': 'Lectura QR Vale',
+      'en': '',
+    },
+  },
+  // direccionesTest
+  {
+    '6pbb54s5': {
+      'es': 'TextField',
+      'en': '',
+    },
+    'p7yv9u03': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'yz5mq40g': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
   // mensajeExito
   {
     'hvty4rmu': {
@@ -273,6 +558,129 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'hbj7lmxd': {
       'es': 'Dirección Seleccionada!',
+      'en': '',
+    },
+  },
+  // registraNuevaPersona
+  {
+    '19elc3pb': {
+      'es': 'Registra nueva Persona',
+      'en': '',
+    },
+    'gyy7ip71': {
+      'es': 'RUT',
+      'en': '',
+    },
+    'vfbfokf2': {
+      'es': 'Pasaporte/DNI',
+      'en': '',
+    },
+    '0unuafj8': {
+      'es': 'Nombres',
+      'en': '',
+    },
+    'tjzirwgj': {
+      'es': 'Paterno',
+      'en': '',
+    },
+    'eif0p34k': {
+      'es': 'Materno',
+      'en': '',
+    },
+    'ud8d9eys': {
+      'es': 'Domicilio',
+      'en': '',
+    },
+    'mwalk47x': {
+      'es': 'U.V',
+      'en': '',
+    },
+    '0v6cj399': {
+      'es': 'Telefono',
+      'en': '',
+    },
+    'v5ip3vay': {
+      'es': 'Email',
+      'en': '',
+    },
+    '75u2qfgf': {
+      'es': 'RUT is required',
+      'en': '',
+    },
+    'yckuevu1': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'p0xg41z5': {
+      'es': 'Pasaporte/DNI is required',
+      'en': '',
+    },
+    '0ql3ovvp': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'f7f86rqd': {
+      'es': 'Nombres is required',
+      'en': '',
+    },
+    'rzk6qquk': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '2sbwjvgh': {
+      'es': 'Paterno is required',
+      'en': '',
+    },
+    'bozyutg3': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    't15m41dj': {
+      'es': 'Materno is required',
+      'en': '',
+    },
+    '26hziaeq': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'kqh040we': {
+      'es': 'Domicilio is required',
+      'en': '',
+    },
+    '007ven5h': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'fban3xuf': {
+      'es': 'U.V is required',
+      'en': '',
+    },
+    'w5msjhcj': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'syw4tcj7': {
+      'es': 'Telefono is requerido',
+      'en': '',
+    },
+    '5hyhsuvp': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'tojslnf0': {
+      'es': 'Email is required',
+      'en': '',
+    },
+    '5l4i49mv': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'wq6fj2t5': {
+      'es': 'Cancelar',
+      'en': '',
+    },
+    '51paxt89': {
+      'es': 'Registrar',
       'en': '',
     },
   },

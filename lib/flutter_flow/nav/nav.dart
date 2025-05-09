@@ -8,7 +8,6 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/custom_auth/custom_auth_user_provider.dart';
 
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -80,13 +79,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+          appStateNotifier.loggedIn ? FirmaResponsableWidget() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? FirmaResponsableWidget()
+              : LoginWidget(),
         ),
         FFRoute(
           name: LoginWidget.routeName,
@@ -132,16 +132,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: DireccionVecinoWidget.routeName,
           path: DireccionVecinoWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'direccionVecino')
-              : DireccionVecinoWidget(),
+          builder: (context, params) => DireccionVecinoWidget(),
         ),
         FFRoute(
           name: MisEntregasWidget.routeName,
           path: MisEntregasWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'misEntregas')
-              : MisEntregasWidget(),
+          builder: (context, params) => MisEntregasWidget(),
+        ),
+        FFRoute(
+          name: MiResumenWidget.routeName,
+          path: MiResumenWidget.routePath,
+          builder: (context, params) => MiResumenWidget(),
+        ),
+        FFRoute(
+          name: HomePageWidget.routeName,
+          path: HomePageWidget.routePath,
+          builder: (context, params) => HomePageWidget(
+            isLogin: params.getParam(
+              'isLogin',
+              ParamType.bool,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: LecturaQRValeWidget.routeName,
+          path: LecturaQRValeWidget.routePath,
+          builder: (context, params) => LecturaQRValeWidget(
+            direccionBenef: params.getParam(
+              'direccionBenef',
+              ParamType.String,
+            ),
+            numeroBenef: params.getParam(
+              'numeroBenef',
+              ParamType.int,
+            ),
+            latitudBenef: params.getParam(
+              'latitudBenef',
+              ParamType.String,
+            ),
+            longitudBenef: params.getParam(
+              'longitudBenef',
+              ParamType.String,
+            ),
+            fechaHora: params.getParam(
+              'fechaHora',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: DireccionesTestWidget.routeName,
+          path: DireccionesTestWidget.routePath,
+          builder: (context, params) => DireccionesTestWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

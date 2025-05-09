@@ -1,8 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'mis_entregas_widget.dart' show MisEntregasWidget;
+import 'direcciones_test_widget.dart' show DireccionesTestWidget;
 import 'package:flutter/material.dart';
 
-class MisEntregasModel extends FlutterFlowModel<MisEntregasWidget> {
+class DireccionesTestModel extends FlutterFlowModel<DireccionesTestWidget> {
+  ///  Local state fields for this page.
+
+  bool showAll = true;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
