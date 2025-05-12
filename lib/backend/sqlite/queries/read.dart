@@ -8,49 +8,50 @@ Future<List<T>> _readQuery<T>(
 ) =>
     database.rawQuery(query).then((r) => r.map((e) => create(e)).toList());
 
-/// BEGIN ALLDIRECCIONES
-Future<List<AllDireccionesRow>> performAllDirecciones(
-  Database database,
-) {
-  final query = '''
-SELECT * FROM GEOM_MAESTRA_PREDIOS_POINT;
-''';
-  return _readQuery(database, query, (d) => AllDireccionesRow(d));
-}
-
-class AllDireccionesRow extends SqliteRow {
-  AllDireccionesRow(Map<String, dynamic> data) : super(data);
-
-  int get objectid => data['objectid'] as int;
-  String get calle => data['calle'] as String;
-  String get numero => data['numero'] as String;
-  String get aclaratoria => data['aclaratoria'] as String;
-  double get xLatitud => data['x_latitud'] as double;
-  double get yLongitud => data['y_longitud'] as double;
-}
-
-/// END ALLDIRECCIONES
-
-/// BEGIN READ DIRECCIONESSEARCH
-Future<List<ReadDireccionesSEARCHRow>> performReadDireccionesSEARCH(
+/// BEGIN CALLESEARCH
+Future<List<CalleSearchRow>> performCalleSearch(
   Database database, {
   String? paramCalle,
 }) {
   final query = '''
-SELECT * FROM GEOM_MAESTRA_PREDIOS_POINT where calle like '%${paramCalle}%'
+SELECT DISTINCT CALLE
+FROM GEOM_MAESTRA_PREDIOS_POINT
+WHERE CALLE LIKE '%${paramCalle}%'
+ORDER BY CALLE ASC;
 ''';
-  return _readQuery(database, query, (d) => ReadDireccionesSEARCHRow(d));
+  return _readQuery(database, query, (d) => CalleSearchRow(d));
 }
 
-class ReadDireccionesSEARCHRow extends SqliteRow {
-  ReadDireccionesSEARCHRow(Map<String, dynamic> data) : super(data);
+class CalleSearchRow extends SqliteRow {
+  CalleSearchRow(Map<String, dynamic> data) : super(data);
 
-  int get objectid => data['objectid'] as int;
-  String get calle => data['calle'] as String;
-  String get numero => data['numero'] as String;
-  String get aclaratoria => data['aclaratoria'] as String;
-  double get xLatitud => data['x_latitud'] as double;
-  double get yLongitud => data['y_longitud'] as double;
+  int get objectid => data['OBJECTID'] as int;
+  String? get calle => data['CALLE'] as String?;
+  String? get numero => data['NUMERO'] as String?;
 }
 
-/// END READ DIRECCIONESSEARCH
+/// END CALLESEARCH
+
+/// BEGIN BUSCARNUMEROSPORCALLE
+Future<List<BuscarNumerosPorCalleRow>> performBuscarNumerosPorCalle(
+  Database database, {
+  String? calle,
+}) {
+  final query = '''
+SELECT DISTINCT NUMERO
+FROM GEOM_MAESTRA_PREDIOS_POINT
+WHERE CALLE = '%${calle}%'
+ORDER BY NUMERO;
+
+''';
+  return _readQuery(database, query, (d) => BuscarNumerosPorCalleRow(d));
+}
+
+class BuscarNumerosPorCalleRow extends SqliteRow {
+  BuscarNumerosPorCalleRow(Map<String, dynamic> data) : super(data);
+
+  String? get numero => data['NUMERO'] as String?;
+  String? get calle => data['CALLE'] as String?;
+}
+
+/// END BUSCARNUMEROSPORCALLE

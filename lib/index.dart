@@ -12,5 +12,6 @@ export '/pages/mi_resumen/mi_resumen_widget.dart' show MiResumenWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/lectura_q_r_vale/lectura_q_r_vale_widget.dart'
     show LecturaQRValeWidget;
-export '/direcciones_test/direcciones_test_widget.dart'
+export '/pages/direcciones_test/direcciones_test_widget.dart'
     show DireccionesTestWidget;
+export '/pages/calles/calles_widget.dart' show CallesWidget;

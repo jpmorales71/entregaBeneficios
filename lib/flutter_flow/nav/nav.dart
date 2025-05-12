@@ -184,6 +184,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DireccionesTestWidget.routeName,
           path: DireccionesTestWidget.routePath,
           builder: (context, params) => DireccionesTestWidget(),
+        ),
+        FFRoute(
+          name: CallesWidget.routeName,
+          path: CallesWidget.routePath,
+          builder: (context, params) => CallesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

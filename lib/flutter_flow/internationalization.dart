@@ -534,8 +534,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // direccionesTest
   {
-    '6pbb54s5': {
+    '45xck5ko': {
       'es': 'TextField',
+      'en': '',
+    },
+    '2m9limpe': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'vky88dfn': {
+      'es': '1',
+      'en': '',
+    },
+    'u8zga7sm': {
+      'es': 'Select...',
+      'en': '',
+    },
+    '2n3kbyki': {
+      'es': 'Search...',
       'en': '',
     },
     'p7yv9u03': {
@@ -543,6 +559,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'yz5mq40g': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // Calles
+  {
+    'ebrb05zy': {
+      'es': 'Select...',
+      'en': '',
+    },
+    'msmp3n26': {
+      'es': 'Search...',
+      'en': '',
+    },
+    '4b8uhzbo': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'no72t9sk': {
+      'es': 'Option 2',
+      'en': '',
+    },
+    '9o138s56': {
+      'es': 'Option 3',
+      'en': '',
+    },
+    'iu3vxo4v': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    '0k1w5xdo': {
       'es': 'Home',
       'en': '',
     },
@@ -688,6 +735,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '0g1fqtio': {
       'es': 'Para scan de QR o Barcode, esta APP necesita su permiso',
+      'en': '',
+    },
+    'p7vzhd34': {
+      'es': '',
       'en': '',
     },
     'o4fege9r': {

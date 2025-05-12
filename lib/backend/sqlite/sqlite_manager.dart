@@ -21,23 +21,27 @@ class SQLiteManager {
       return;
     }
     _database = await initializeDatabaseFromDbFile(
-      'direcciones',
+      'direcciones_l_f',
       'direccionesLF.db',
     );
   }
 
   /// START READ QUERY CALLS
 
-  Future<List<AllDireccionesRow>> allDirecciones() => performAllDirecciones(
-        _database,
-      );
-
-  Future<List<ReadDireccionesSEARCHRow>> readDireccionesSEARCH({
+  Future<List<CalleSearchRow>> calleSearch({
     String? paramCalle,
   }) =>
-      performReadDireccionesSEARCH(
+      performCalleSearch(
         _database,
         paramCalle: paramCalle,
+      );
+
+  Future<List<BuscarNumerosPorCalleRow>> buscarNumerosPorCalle({
+    String? calle,
+  }) =>
+      performBuscarNumerosPorCalle(
+        _database,
+        calle: calle,
       );
 
   /// END READ QUERY CALLS
